@@ -19,7 +19,7 @@ URL:            https://caddyserver.com
 # go module.  To do that, we are going to forgo the traditional source tarball
 # and instead use just this file from upstream.  This method requires that we
 # allow networking in the build environment.
-Source0:        https://github.com/caddyserver/xcaddy/releases/download/%{xcaddyver}/xcaddy_%{xcaddyver}_linux_amd64.tar.gz
+Source0:        https://github.com/caddyserver/xcaddy/releases/download/v%{xcaddyver}/xcaddy_%{xcaddyver}_linux_amd64.tar.gz
 # Use official resources for config, unit file, and welcome page.
 # https://github.com/caddyserver/dist
 Source1:        https://raw.githubusercontent.com/caddyserver/dist/master/config/Caddyfile
