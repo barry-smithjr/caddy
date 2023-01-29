@@ -59,7 +59,7 @@ tar zxvf %{SOURCE0}
 # https://fedoraproject.org/wiki/Changes/golang1.13#Detailed_Description
 export GOPROXY='https://proxy.golang.org,direct'
 
-xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder
+%{_sourcedir}/xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder
 
 
 
