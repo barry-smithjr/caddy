@@ -1,11 +1,11 @@
 # Based on https://github.com/caddyserver/dist/blob/master/rpm/caddy.spec
 %global debug_package %{nil}
 
-%global basever 2.6.2
+%global basever 2.7.3
 #global prerel rc
 #global prerelnum 3
 %global tag v%{basever}%{?prerel:-%{prerel}.%{prerelnum}}
-%global xcaddyver 0.3.1
+%global xcaddyver 0.3.5
 
 Name:           caddy
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/Versioning/#_versioning_prereleases_with_tilde
@@ -168,6 +168,9 @@ fi
 
 
 %changelog
+* Tue Aug 08 2023 Barry Smith <barry.smithjr@gmail.com> - 2.7.3-1
+- Update to version 2.7.3
+
 * Sun Nov 06 2022 Carl George <carl@george.computer> - 2.6.2-1
 - Update to version 2.6.2
 
