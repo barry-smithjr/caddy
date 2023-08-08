@@ -28,7 +28,7 @@ Source3:        https://raw.githubusercontent.com/caddyserver/dist/master/init/c
 Source4:        https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html
 
 # https://github.com/caddyserver/caddy/commit/141872ed80d6323505e7543628c259fdae8506d3
-BuildRequires:  golang >= 1.18
+BuildRequires:  golang >= 1.20
 BuildRequires:  git-core
 %if 0%{?rhel} && 0%{?rhel} < 8
 BuildRequires:  systemd
