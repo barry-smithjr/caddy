@@ -1,7 +1,7 @@
 # Based on https://github.com/caddyserver/dist/blob/master/rpm/caddy.spec
 %global debug_package %{nil}
 
-%global basever 2.7.4
+%global basever 2.7.6
 #global prerel rc
 #global prerelnum 3
 %global tag v%{basever}%{?prerel:-%{prerel}.%{prerelnum}}
@@ -28,7 +28,7 @@ Source3:        https://raw.githubusercontent.com/caddyserver/dist/master/init/c
 Source4:        https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html
 
 # https://github.com/caddyserver/caddy/commit/141872ed80d6323505e7543628c259fdae8506d3
-BuildRequires:  golang >= 1.20
+BuildRequires:  golang >= 1.21
 BuildRequires:  git-core
 %if 0%{?rhel} && 0%{?rhel} < 8
 BuildRequires:  systemd
@@ -59,7 +59,7 @@ tar zxvf %{SOURCE0}
 # https://fedoraproject.org/wiki/Changes/golang1.13#Detailed_Description
 export GOPROXY='https://proxy.golang.org,direct'
 
-%{_builddir}/xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder
+%{_builddir}/xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder --with github.com/caddyserver/cache-handler
 
 
 
