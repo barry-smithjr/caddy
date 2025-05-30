@@ -1,11 +1,11 @@
 # Based on https://github.com/caddyserver/dist/blob/master/rpm/caddy.spec
 %global debug_package %{nil}
 
-%global basever 2.7.6
+%global basever 2.10.0
 #global prerel rc
 #global prerelnum 3
 %global tag v%{basever}%{?prerel:-%{prerel}.%{prerelnum}}
-%global xcaddyver 0.3.5
+%global xcaddyver 0.4.4
 
 Name:           caddy
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/Versioning/#_versioning_prereleases_with_tilde
@@ -28,7 +28,7 @@ Source3:        https://raw.githubusercontent.com/caddyserver/dist/master/init/c
 Source4:        https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html
 
 # https://github.com/caddyserver/caddy/commit/141872ed80d6323505e7543628c259fdae8506d3
-BuildRequires:  golang >= 1.20
+BuildRequires:  golang >= 1.24
 BuildRequires:  git-core
 %if 0%{?rhel} && 0%{?rhel} < 8
 BuildRequires:  systemd
@@ -59,7 +59,7 @@ tar zxvf %{SOURCE0}
 # https://fedoraproject.org/wiki/Changes/golang1.13#Detailed_Description
 export GOPROXY='https://proxy.golang.org,direct'
 
-%{_builddir}/xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder --with github.com/caddyserver/cache-handler
+%{_builddir}/xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/kirsch33/realip --with github.com/mholt/caddy-dynamicdns --with github.com/caddyserver/transform-encoder --with github.com/caddyserver/cache-handler --with github.com/WeidiDeng/caddy-cloudflare-ip
 
 
 
@@ -168,6 +168,9 @@ fi
 
 
 %changelog
+* Fri May 30 2025 Barry Smith <barry.smithjr@gmail.com> - 2.10.0-1
+- Update to version 2.10.1
+
 * Tue Sep 08 2023 Barry Smith <barry.smithjr@gmail.com> - 2.7.4-1
 - Update to version 2.7.4
 
